@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "ipv4Tool_FS/1.0.0": {
+        "runtime": {
+          "ipv4Tool_FS.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ipv4Tool_FS/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

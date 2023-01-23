@@ -1,0 +1,15 @@
+/Users/fsociety/Projects/ipv4Tool_FS/ipv4Tool_FS/bin/Debug/net7.0/ipv4Tool_FS
+/Users/fsociety/Projects/ipv4Tool_FS/ipv4Tool_FS/bin/Debug/net7.0/ipv4Tool_FS.deps.json
+/Users/fsociety/Projects/ipv4Tool_FS/ipv4Tool_FS/bin/Debug/net7.0/ipv4Tool_FS.runtimeconfig.json
+/Users/fsociety/Projects/ipv4Tool_FS/ipv4Tool_FS/bin/Debug/net7.0/ipv4Tool_FS.dll
+/Users/fsociety/Projects/ipv4Tool_FS/ipv4Tool_FS/bin/Debug/net7.0/ipv4Tool_FS.pdb
+/Users/fsociety/Projects/ipv4Tool_FS/ipv4Tool_FS/obj/Debug/net7.0/ipv4Tool_FS.csproj.AssemblyReference.cache
+/Users/fsociety/Projects/ipv4Tool_FS/ipv4Tool_FS/obj/Debug/net7.0/ipv4Tool_FS.GeneratedMSBuildEditorConfig.editorconfig
+/Users/fsociety/Projects/ipv4Tool_FS/ipv4Tool_FS/obj/Debug/net7.0/ipv4Tool_FS.AssemblyInfoInputs.cache
+/Users/fsociety/Projects/ipv4Tool_FS/ipv4Tool_FS/obj/Debug/net7.0/ipv4Tool_FS.AssemblyInfo.cs
+/Users/fsociety/Projects/ipv4Tool_FS/ipv4Tool_FS/obj/Debug/net7.0/ipv4Tool_FS.csproj.CoreCompileInputs.cache
+/Users/fsociety/Projects/ipv4Tool_FS/ipv4Tool_FS/obj/Debug/net7.0/ipv4Tool_FS.dll
+/Users/fsociety/Projects/ipv4Tool_FS/ipv4Tool_FS/obj/Debug/net7.0/refint/ipv4Tool_FS.dll
+/Users/fsociety/Projects/ipv4Tool_FS/ipv4Tool_FS/obj/Debug/net7.0/ipv4Tool_FS.pdb
+/Users/fsociety/Projects/ipv4Tool_FS/ipv4Tool_FS/obj/Debug/net7.0/ipv4Tool_FS.genruntimeconfig.cache
+/Users/fsociety/Projects/ipv4Tool_FS/ipv4Tool_FS/obj/Debug/net7.0/ref/ipv4Tool_FS.dll

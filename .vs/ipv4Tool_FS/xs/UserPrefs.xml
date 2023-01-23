@@ -1,0 +1,23 @@
+﻿<Properties StartupConfiguration="{2B2EB06A-4818-4854-803B-2B6A47C6B592}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ipv4Tool_FS/Program.cs">
+    <Files>
+      <File FileName="ipv4Tool_FS/Program.cs" Line="51" Column="14" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ipv4Tool_FS" expanded="True">
+            <Node name="ipv4Tool_FS" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.ipv4Tool__FS PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+</Properties>
