@@ -10,8 +10,6 @@ internal class Program
 
     {
         DisplayIPAddresses();
-        Console.ReadKey();
-        Menu();
     }
 
     public static string DisplayIPAddresses()
@@ -46,39 +44,24 @@ internal class Program
                     
                     string vpnCheck = network.Name.ToString();
 
-                    Console.WriteLine(vpnCheck);
-                    Console.ReadKey();
-
-
 
                     //if test contain
-                    if (vpnCheck.Contains("en"))
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine(vpnCheck);
-
-                        Console.WriteLine("Your Local IP address is: {0}\nYou are using a wireless interface to achieve this connection called: {1}.\n", address.Address, vpnCheck, network.Description);
-                        Console.ReadKey();
-                    }
-                    else if (vpnCheck.Contains("ipsec") || vpnCheck.Contains("mu"))
+                    if (vpnCheck.Contains("ipsec") || vpnCheck.Contains("utun"))
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("This application does not support the use of a Virtual Private Network (VPN)\nPlease disable your VPN and come back once it has been disabled.");
                         Console.WriteLine("Press any key to exit the application.");
+                        Console.ForegroundColor = ConsoleColor.White;
                         //Waits for a key press and then shuts down the application.
                         Console.ReadKey();
                         Environment.Exit(0);
                     }
-                    else 
+                    else
                     {
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine("You shouldn't have ended up here.");
-                        Console.WriteLine("You may be missing an active connection to the internet.");
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Next key press will close the application.\nPlease try again!");
-                        Console.ReadKey();
-                        Environment.Exit(0);
+                        Menu();
                     }
+                    
+
                 }
 
             }
@@ -88,14 +71,35 @@ internal class Program
 
     }
 
-    private static void Menu()
+    public static void Menu()
     {
-        Console.Clear();
-        Console.WriteLine("1. Set a new IP address");
-        Console.WriteLine("2. Unrestrict access to censored websites (i.e. thepiratebay.org");
-        Console.WriteLine("3. Connect to your router");
-        Console.WriteLine("4. FAQ");
+        bool placeHolder = false;
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Clear();
+            Console.WriteLine("1. Set a new IP address");
+            Console.WriteLine("2. Unrestrict access to censored websites (i.e. thepiratebay.org");
+            Console.WriteLine("3. Connect to your router");
+            Console.WriteLine("4. FAQ");
+            Console.WriteLine("5. Show external IP address");
+            string input = Console.ReadLine();
+            if (input.Equals("5"))
+            {
+                showExternalIP();
+                placeHolder = true;
+            }
+            else if (input != "1" || input != "2" || input != "3" || input != "4" || input != "5")
+            {
+                Console.WriteLine("wrong answer motherfucker");
+            }
+        
+        
         Console.ReadKey();
+       
     }
-
+    private static void showExternalIP()
+    {
+        string externalIpString = new WebClient().DownloadString("http://icanhazip.com").Replace("\\r\\n", "").Replace("\\n", "").Trim();
+        var externalIp = IPAddress.Parse(externalIpString);
+        Console.WriteLine(externalIp.ToString());
+    }
 }
