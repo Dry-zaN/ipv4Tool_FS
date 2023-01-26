@@ -9,7 +9,10 @@ internal class Program
     public static void Main(string[] args)
 
     {
+        bool vpnOn;
+        Console.ReadKey();
         DisplayIPAddresses();
+        Menu();
     }
 
     public static string DisplayIPAddresses()
@@ -44,9 +47,11 @@ internal class Program
                     
                     string vpnCheck = network.Name.ToString();
 
+                    Console.WriteLine(returnAddress);
+                    Console.ReadKey();
 
                     //if test contain
-                    if (vpnCheck.Contains("ipsec") || vpnCheck.Contains("utun"))
+                    if (vpnCheck.Contains("ipsec") || vpnCheck.Contains("utun3"))
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("This application does not support the use of a Virtual Private Network (VPN)\nPlease disable your VPN and come back once it has been disabled.");
@@ -56,10 +61,6 @@ internal class Program
                         Console.ReadKey();
                         Environment.Exit(0);
                     }
-                    else
-                    {
-                        Menu();
-                    }
                     
 
                 }
@@ -67,6 +68,7 @@ internal class Program
             }
         }
         return returnAddress;
+        
 
 
     }
@@ -81,6 +83,8 @@ internal class Program
             Console.WriteLine("3. Connect to your router");
             Console.WriteLine("4. FAQ");
             Console.WriteLine("5. Show external IP address");
+
+            Console.ForegroundColor = ConsoleColor.White;
             string input = Console.ReadLine();
             if (input.Equals("5"))
             {
@@ -90,6 +94,8 @@ internal class Program
             else if (input != "1" || input != "2" || input != "3" || input != "4" || input != "5")
             {
                 Console.WriteLine("wrong answer motherfucker");
+                Console.ReadKey();
+                Menu();
             }
         
         
@@ -101,5 +107,8 @@ internal class Program
         string externalIpString = new WebClient().DownloadString("http://icanhazip.com").Replace("\\r\\n", "").Replace("\\n", "").Trim();
         var externalIp = IPAddress.Parse(externalIpString);
         Console.WriteLine(externalIp.ToString());
+        Console.ReadKey();
+        Menu();
+
     }
 }
