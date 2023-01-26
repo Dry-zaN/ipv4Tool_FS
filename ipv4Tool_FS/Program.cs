@@ -9,6 +9,7 @@ internal class Program
     public static void Main(string[] args)
 
     {
+        Console.Title = "DryzaN IPv4Tool";
         bool vpnOn;
         Console.ReadKey();
         DisplayIPAddresses();
@@ -73,9 +74,13 @@ internal class Program
 
     }
 
+    //Menus are still WIP
+
     public static void Menu()
     {
-        bool placeHolder = false;
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Welcome to DryzaN's IPv4 Tool\n");
+
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Clear();
             Console.WriteLine("1. Set a new IP address");
@@ -83,25 +88,77 @@ internal class Program
             Console.WriteLine("3. Connect to your router");
             Console.WriteLine("4. FAQ");
             Console.WriteLine("5. Show external IP address");
+            Console.WriteLine("6. Menú en Español");
 
             Console.ForegroundColor = ConsoleColor.White;
             string input = Console.ReadLine();
-            if (input.Equals("5"))
+            input.ToLower();
+
+            if (input != "1" && input != "2" && input != "3" && input != "4" && input != "5" && input != "6" && input != "exit")
+            {
+            Console.WriteLine("wrong answer motherfucker");
+            Console.ReadKey();
+            Menu();
+            }
+            else if (input.Equals("exit"))
+            {
+                Environment.Exit(0);
+            }
+            else if (input.Equals("5"))
             {
                 showExternalIP();
-                placeHolder = true;
             }
-            else if (input != "1" || input != "2" || input != "3" || input != "4" || input != "5")
+            else if (input.Equals("6"))
             {
-                Console.WriteLine("wrong answer motherfucker");
-                Console.ReadKey();
-                Menu();
-            }
-        
-        
+                spanishMenu();
+            }   
+
+
         Console.ReadKey();
        
     }
+
+    public static void spanishMenu()
+    {
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Bievenido para herramienta IPv4 de DryzaN\n");
+
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.Clear();
+        Console.WriteLine("1. Configurado IP nuevo");
+        Console.WriteLine("2. Unrestrict access to censored websites (i.e. thepiratebay.org");
+        Console.WriteLine("3. Connect to your router");
+        Console.WriteLine("4. FAQ");
+        Console.WriteLine("5. Mostrar IP externa");
+        Console.WriteLine("6. Menú en Inglés");
+
+        Console.ForegroundColor = ConsoleColor.White;
+        string input = Console.ReadLine(); input.ToLower();
+
+        if (input != "1" && input != "2" && input != "3" && input != "4" && input != "5" && input != "6" && input != "exit")
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("¡Respuesta incorrecta!");
+            Console.ReadKey();
+            Menu();
+        }
+        else if (input.Equals("5"))
+        {
+            showExternalIP();
+        }
+        else if (input.Equals("6"))
+        {
+            Menu();
+        }
+        else if (input.Equals("exit"))
+        {
+            Environment.Exit(0);
+        }
+
+
+        Console.ReadKey();
+    }
+
     private static void showExternalIP()
     {
         string externalIpString = new WebClient().DownloadString("http://icanhazip.com").Replace("\\r\\n", "").Replace("\\n", "").Trim();
